@@ -47,6 +47,8 @@ GEM
     ffi (1.9.18)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    html_truncator (0.4.1)
+      nokogiri (~> 1.5)
     i18n (0.8.1)
     jsonapi-serializers (0.16.1)
       activesupport
@@ -126,6 +128,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   chronic
+  html_truncator
   jsonapi-serializers
   listen (~> 3.0.5)
   puma (~> 3.0)

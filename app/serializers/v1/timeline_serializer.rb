@@ -2,7 +2,7 @@ class V1::TimelineSerializer < ApplicationSerializer
   attribute :title
   attribute :author
   attribute :url
-  attribute :body
+  attribute :summary
   attribute :publish_date
   # attribute :image_url
 

@@ -20,6 +20,9 @@ gem 'chronic'
 # RSS feed parser
 gem 'simple-rss'
 
+# Truncate HTML encoded strings
+gem 'html_truncator'
+
 # Use JSON-api
 gem 'jsonapi-serializers'
 

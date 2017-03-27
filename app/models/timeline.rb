@@ -1,5 +1,5 @@
 class Timeline
-  attr_reader :title, :url, :publish_date, :author, :image_url, :body
+  attr_reader :title, :url, :publish_date, :author, :image_url, :summary
 
   def self.all
     timeline = Post.all #+ Podcast.all + Github.all

@@ -11,7 +11,7 @@ class Post < Timeline
     summary = HTML_Truncator.truncate(attrs.content_encoded.force_encoding('UTF-8'), SUMMARY_LENGTH_IN_WORDS)
 
     @title = attrs.title
-    @summary = summary
+    @description = summary
     @author = attrs.dc_creator.force_encoding('UTF-8')
     @url = attrs.link
     @publish_date = Chronic.parse(date)

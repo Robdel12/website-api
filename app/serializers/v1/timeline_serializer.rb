@@ -2,7 +2,7 @@ class V1::TimelineSerializer < ApplicationSerializer
   attribute :title
   attribute :author
   attribute :url
-  attribute :summary
+  attribute :description
   attribute :publish_date
   # attribute :image_url
 
@@ -15,6 +15,6 @@ class V1::TimelineSerializer < ApplicationSerializer
   end
 
    def type
-    'timeline'
+     object.class.to_s.downcase
   end
 end

@@ -26,6 +26,9 @@ gem 'html_truncator'
 # Use JSON-api
 gem 'jsonapi-serializers'
 
+# fetch JSON
+gem 'httparty'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 

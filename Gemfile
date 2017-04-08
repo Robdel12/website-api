@@ -12,7 +12,13 @@ gem 'rails', '~> 5.0.2'
 gem 'pg'
 
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma', '~>3.0'
+
+# Allows dot access to hashes
+gem 'map', '6.6'
+
+## Rials caching
+gem 'dalli'
 
 # Time parsing, it's 4:20 somewhere
 gem 'chronic'

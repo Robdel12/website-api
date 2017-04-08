@@ -43,6 +43,7 @@ GEM
     byebug (9.0.6)
     chronic (0.10.2)
     concurrent-ruby (1.0.5)
+    dalli (2.7.6)
     erubis (2.7.0)
     ffi (1.9.18)
     globalid (0.3.7)
@@ -61,6 +62,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    map (6.6.0)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -131,10 +133,12 @@ PLATFORMS
 DEPENDENCIES
   byebug
   chronic
+  dalli
   html_truncator
   httparty
   jsonapi-serializers
   listen (~> 3.0.5)
+  map (= 6.6)
   pg
   puma (~> 3.0)
   rack-cors

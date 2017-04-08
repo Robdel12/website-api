@@ -27,7 +27,7 @@ gem 'chronic'
 gem 'simple-rss'
 
 # Truncate HTML encoded strings
-gem 'html_truncator'
+gem 'html_truncator', :github => 'Robdel12/HTML-Truncator'
 
 # Use JSON-api
 gem 'jsonapi-serializers'

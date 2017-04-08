@@ -6,10 +6,13 @@ class V1::TimelineController < ApplicationController
   private
 
   def timeline
-    timeline = Timeline.all
-    limit = params[:limit] || timeline.length
+    limit = params[:limit] || cached_timeline.length
 
-    timeline.select(&by_type).take(limit.to_i)
+    cached_timeline.select(&by_type).take(limit.to_i)
+  end
+
+  def cached_timeline
+    Rails.cache.read('/v1/timeline')
   end
 
   # filter by timeline type.

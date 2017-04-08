@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/Robdel12/HTML-Truncator.git
+  revision: 2633b7a2f6f7ecf6066980995196250370b5b7fc
+  specs:
+    html_truncator (0.4.1)
+      nokogiri (~> 1.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -48,8 +55,6 @@ GEM
     ffi (1.9.18)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
-    html_truncator (0.4.1)
-      nokogiri (~> 1.5)
     httparty (0.14.0)
       multi_xml (>= 0.5.2)
     i18n (0.8.1)
@@ -134,7 +139,7 @@ DEPENDENCIES
   byebug
   chronic
   dalli
-  html_truncator
+  html_truncator!
   httparty
   jsonapi-serializers
   listen (~> 3.0.5)

@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'localhost:3000', 'robert-deluca.com', 'robertdelu.ca', 'rob-new-website.herokuapp'
+    origins 'localhost:4200', 'localhost:3000', 'robert-deluca.com', 'robertdelu.ca', 'rob-new-website.herokuapp'
     resource '*',
       headers: :any,
       methods: %i(get post put patch delete options head)

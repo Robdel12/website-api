@@ -8,7 +8,7 @@ class V1::PostController < ApplicationController
   def post
     limit = params[:limit] || cached_post.length
 
-    cached_post.take(limit.to_i)
+    cached_post.take(limit.to_i).sort_by(&:published_date).reverse
   end
 
   def cached_post

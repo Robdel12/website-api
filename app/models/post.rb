@@ -1,27 +1,32 @@
+# coding: utf-8
 require 'open-uri'
-require 'chronic'
-require 'html_truncator'
+require 'util/post_normalizer'
 
 MEDIUM_RSS_URL = 'https://medium.com/feed/@robdel12'
-SUMMARY_LENGTH_IN_WORDS = 20
 
 class Post < Timeline
-  def initialize(attrs)
-    date = attrs.pubDate.to_s
-    summary = HTML_Truncator.truncate(attrs.content_encoded.force_encoding('UTF-8'), SUMMARY_LENGTH_IN_WORDS)
+  attr_reader :title, :url, :published_date, :post_slug, :body, :is_medium
 
-    @title = attrs.title
-    @description = summary
-    @author = attrs.dc_creator.force_encoding('UTF-8')
-    @url = attrs.link
-    @publish_date = Chronic.parse(date)
+  def initialize(attrs)
+    post = PostNormalizer.create(attrs)
+
+    @title = post.title
+    @url = post.link
+    @post_slug = post.post_slug
+    @published_date = post.published_date
+    @body = post.body
+    @is_medium = post.is_medium
   end
 
   def self.all
+    old_blog = HTTParty.get('https://dry-fjord-5394.herokuapp.com/api/posts?page=1&per_post=100')
+
     open(MEDIUM_RSS_URL) do |rss|
       feed = SimpleRSS.parse(rss)
 
-      feed.entries.map { |item| new item }
+      feed.entries.concat(old_blog.parsed_response['posts']).map do |item|
+        new item
+      end
     end
   end
 end

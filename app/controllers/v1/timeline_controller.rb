@@ -18,7 +18,7 @@ class V1::TimelineController < ApplicationController
   # filter by timeline type.
   def by_type
     filter(:type) do |timeline, type|
-      timeline.timeline_type.casecmp(type).zero?
+      timeline.artifact_type.casecmp(type).zero?
     end
   end
 

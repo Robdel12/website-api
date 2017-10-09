@@ -1,9 +1,9 @@
 class Timeline
-  attr_reader :title, :url, :publish_date, :author, :image_url, :description
+  attr_reader :title, :url, :published_date, :author, :image_url, :description
 
   def self.all
-    timeline = Podcast.all  + Github.all
-    timeline.sort_by(&:publish_date).reverse
+    timeline = Podcast.all  + Github.all + Post.all
+    timeline.sort_by(&:published_date).reverse
   end
 
   def artifact_type

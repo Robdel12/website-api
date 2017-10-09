@@ -3,8 +3,7 @@ class V1::TimelineSerializer < ApplicationSerializer
   attribute :author
   attribute :url
   attribute :description
-  attribute :publish_date
-  # attribute :image_url
+  attribute :published_date
 
   def id
     nil

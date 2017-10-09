@@ -11,7 +11,7 @@ class Github < Timeline
     @author = event.author
     @url = unwrap_url(event.url)
     @description = event.description
-    @publish_date = event.publish_date
+    @published_date = event.publish_date
   end
 
   def self.all

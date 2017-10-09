@@ -12,7 +12,7 @@ class Podcast < Timeline
     @description = podcast['description']
     @author = "Robert DeLuca"
     @url = podcast['url']
-    @publish_date = Chronic.parse(date)
+    @published_date = Chronic.parse(date)
   end
 
   def self.all

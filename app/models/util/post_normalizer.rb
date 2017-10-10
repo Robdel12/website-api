@@ -1,4 +1,7 @@
 require 'chronic'
+require 'html_truncator'
+
+SUMMARY_LENGTH_IN_WORDS = 20
 
 class PostNormalizer
   def initialize(attrs)
@@ -43,6 +46,10 @@ class MediumPost < PostNormalizer
   def is_medium
     true
   end
+
+  def description
+    HTML_Truncator.truncate(@attrs.content_encoded.force_encoding('UTF-8'), SUMMARY_LENGTH_IN_WORDS)
+  end
 end
 
 class LegacyPost < PostNormalizer
@@ -60,6 +67,10 @@ class LegacyPost < PostNormalizer
 
   def body
     @attrs.body
+  end
+
+  def description
+    @attrs.excerpt
   end
 
   def is_medium

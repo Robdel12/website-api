@@ -5,7 +5,7 @@ require 'util/post_normalizer'
 MEDIUM_RSS_URL = 'https://medium.com/feed/@robdel12'
 
 class Post < Timeline
-  attr_reader :title, :url, :published_date, :post_slug, :body, :is_medium
+  attr_reader :title, :url, :published_date, :post_slug, :body, :is_medium, :description
 
   def initialize(attrs)
     post = PostNormalizer.create(attrs)
@@ -16,6 +16,9 @@ class Post < Timeline
     @published_date = post.published_date
     @body = post.body
     @is_medium = post.is_medium
+
+    # for timeline
+    @description = post.description
   end
 
   def self.all

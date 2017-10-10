@@ -4,6 +4,7 @@ class V1::TimelineSerializer < ApplicationSerializer
   attribute :url
   attribute :description
   attribute :published_date
+  attribute :image_url
 
   def id
     nil

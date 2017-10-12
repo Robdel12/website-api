@@ -48,7 +48,8 @@ class MediumPost < PostNormalizer
   end
 
   def description
-    HTML_Truncator.truncate(@attrs.content_encoded.force_encoding('UTF-8'), SUMMARY_LENGTH_IN_WORDS)
+    no_html = @attrs.content_encoded.force_encoding('UTF-8').gsub(/<\/?[^>]*>/, "")
+    no_html.truncate_words(SUMMARY_LENGTH_IN_WORDS)
   end
 end
 

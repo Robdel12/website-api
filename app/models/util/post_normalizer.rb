@@ -24,11 +24,11 @@ end
 
 class MediumPost < PostNormalizer
   def post_slug
-    @attrs.title.to_url
+    @attrs.title.force_encoding('UTF-8').to_url
   end
 
   def title
-    @attrs.title
+    @attrs.title.force_encoding('UTF-8')
   end
 
   def published_date
